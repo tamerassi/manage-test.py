@@ -18,7 +18,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def driver():
     chrome_driver_binary = "tests/e2e/chromedriver.exe"
     ser_chrome = ChromeService(chrome_driver_binary)
-    driver = webdriver.Chrome(chrome_driver_binary)
+    driver = webdriver.Chrome(ser_chrome)
     yield driver
     driver.close()
 
