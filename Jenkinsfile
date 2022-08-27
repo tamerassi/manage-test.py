@@ -1,4 +1,4 @@
-@Library("Testing-CI-CD-library") _
+
 
 pipeline {
     agent  any
@@ -8,7 +8,6 @@ pipeline {
         stage('Install Python Libraries'){
             steps {
                 sh '''
-                    source venv/bin/activate
                     pip install -r requirements.txt
                     python3 -m pip install pytest allure-python-commons allure-pytest pytest-html
                 '''
@@ -18,7 +17,7 @@ pipeline {
         stage("Running Test & Report "){
             steps {
                 sh '''
-                    python3 -m pytest ./tests/unit ./tests/api --html=report.html --alluredir=allure-results
+                    python3 -m pytest --html=report.html --alluredir=allure-results
                 '''
             }
         }
