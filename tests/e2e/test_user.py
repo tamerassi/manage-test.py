@@ -16,9 +16,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture()
 def driver():
-    chrome_driver_binary = "tests/e2e/chromedriver.exe"
+    chrome_driver_binary = "chromedriver.exe"
     ser_chrome = ChromeService(chrome_driver_binary)
-    driver = webdriver.Chrome(ser_chrome)
+    driver = webdriver.Chrome(chrome_driver_binary)
     yield driver
     driver.close()
 
