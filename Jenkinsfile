@@ -8,7 +8,6 @@ pipeline {
         stage('Install Python Libraries'){
             steps {
                 sh '''
-                    source venv/bin/activate
                     pip install -r requirements.txt
                     python3 -m pip install pytest allure-python-commons allure-pytest pytest-html
                 '''
