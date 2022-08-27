@@ -126,7 +126,7 @@ def test_user_create_account(driver):
     driver.find_element(By.ID, "name").click()
     driver.find_element(By.ID, "name").send_keys("assi")
     driver.find_element(By.ID, "email").click()
-    driver.find_element(By.ID, "email").send_keys("assi4@gmail.com")
+    driver.find_element(By.ID, "email").send_keys("assi6@gmail.com")
     driver.find_element(By.ID, "password").click()
     driver.find_element(By.ID, "password").send_keys("assi12345")
     driver.find_element(By.ID, "passwordConfirm").click()
