@@ -7,7 +7,7 @@ pipeline {
 
         stage('Install Python Libraries'){
             steps {
-                sh '''
+                bat '''
                     pip install -r requirements.txt
                     python3 -m pip install pytest allure-python-commons allure-pytest pytest-html
                 '''
@@ -16,7 +16,7 @@ pipeline {
 
         stage("Running Test & Report "){
             steps {
-                sh '''
+                bat '''
                     python3 -m pytest --html=report.html --alluredir=allure-results
                 '''
             }
@@ -24,21 +24,21 @@ pipeline {
 
         stage('Build Image'){
             steps {
-                sh '''
+                bat '''
                     docker image build -t tamer-assi/django-project .
                 '''
             }
         }
                 stage('Run Container'){
             steps {
-                sh '''
+                bat '''
                     docker run -p 8000:8000 -d tamer-assi/django-project
                 '''
             }
         }
                 stage('Run Tests on container'){
             steps {
-                sh '''
+                bat '''
                     python3 -m pytest ./tests/E2E
                 '''
             }
