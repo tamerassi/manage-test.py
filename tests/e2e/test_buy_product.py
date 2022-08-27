@@ -49,10 +49,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture()
 def driver():
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    chrome_driver_binary = "chromedriver.exe"
+    ser_chrome = ChromeService(chrome_driver_binary)
+    driver = webdriver.Chrome(service=ser_chrome)
     yield driver
     driver.close()
-
 #
 # def test_buy_product_without_account(driver):
 #     driver.get("http://127.0.0.1:8000/#/")
