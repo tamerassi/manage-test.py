@@ -17,7 +17,7 @@ pipeline {
         stage("Running Test & Report "){
             steps {
                 sh '''
-                    python3 -m pytest ./tests/unit ./tests/api --html=report.html --alluredir=allure-results
+                    python3 -m pytest --html=report.html --alluredir=allure-results
                 '''
             }
         }
