@@ -36,13 +36,6 @@ pipeline {
                 '''
             }
         }
-                stage('Run Tests on container'){
-            steps {
-                sh '''
-                    python -m pytest ./tests/E2E
-                '''
-            }
-        }
     }
 
     post{
