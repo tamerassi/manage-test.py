@@ -12,7 +12,7 @@
 # from selenium.webdriver.chrome.options import Options as ChromeOptions
 # from selenium.webdriver.support.wait import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
-# from webdriver_manager.chrome import ChromeDriverManager
+
 #
 # @pytest.fixture()
 # def driver():
