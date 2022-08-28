@@ -2,9 +2,7 @@
 
 pipeline {
     agent  any
-    environment {
-    python3 = "C:\Users\cheer\AppData\Local\Programs\Python\Python39"
-    }
+
     stages {
 
         stage('Install Python Libraries'){
