@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh '''
                     pip install -r requirements.txt
-                    python3 -m pip install pytest allure-python-commons allure-pytest pytest-html
+                    python -m pip install pytest allure-python-commons allure-pytest pytest-html
                 '''
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage("Running Test & Report "){
             steps {
                 sh '''
-                    python3 -m pytest --html=report.html --alluredir=allure-results
+                    python -m pytest --html=report.html --alluredir=allure-results
                 '''
             }
         }
@@ -39,7 +39,7 @@ pipeline {
                 stage('Run Tests on container'){
             steps {
                 sh '''
-                    python3 -m pytest ./tests/E2E
+                    python -m pytest ./tests/E2E
                 '''
             }
         }
