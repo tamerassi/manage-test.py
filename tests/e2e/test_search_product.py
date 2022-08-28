@@ -17,7 +17,7 @@ def driver():
 def test_search_product(driver):
     driver.get("http://127.0.0.1:8000/#/")
     name_product = driver.find_element(By.CSS_SELECTOR,
-                                       "#root > div > main > div > div:nth-child(3) > div > div:nth-child(3) > div > div > a > div > strong").text
+                                       "#root > div > main > div > div:nth-child(3) > div > div:nth-child(3) > div > div > a").text
     driver.find_element(By.NAME, "q").click()
     driver.find_element(By.NAME, "q").send_keys(name_product)
     time.sleep(3)
@@ -26,5 +26,5 @@ def test_search_product(driver):
     searched_product = driver.find_element(By.CSS_SELECTOR,
                                            "#root > div > main > div > div > div > div:nth-child(1) > div > div > a > div > strong").text
     assert searched_product == name_product
-    assert searched_product == "AVR ATMega328"
+    assert name_product == "AVR ATMega328"
 
